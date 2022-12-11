@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-xxl textoCentral mb-5 pl-5">
+        <p class="textoarriba mb-1"><span>Bienvenidos.</span> Nuestra calculadora de clientes potenciales es una herramienta que le ayuda a calcular sin esfuerzo su inversión en marketing</p>
+        <p>Introduzca los datos de su empresa en la casilla de la izquierda.</p>
+      </div>
+      
+      
+      <div class="container d-flex justify-content-around padre">
+        <!--CONTENEDOR IZQUIERDA-->
+        <div class="container contenedorIngresaDatos d-flex justify-content-top flex-column">
+          <h6>OBJETIVO DE NUEVOS CLIENTES AL MES</h6>
+          <div class="clientsPerMonthValue">
+            <input onkeyup="primerInput(); ingresoTotal2(); inversion();" id="clientesPorMes" type="text" placeholder="000" maxlength="3" type="number" ondrop="return false;" onpaste="return false;">
+          </div>
+      
+          <div class="averageRevenueText">
+            <p>Ingresos en promedio por cliente</p>
+            <input onkeyup="ingresoTotal(); inversion()" id="ingresoPromedioPorCliente" class="averagerevenue" type="number" placeholder="  $ 000  " maxlength="6" ondrop="return false;" onpaste="return false;"><span class="ml-2">MXN</span>
+          </div>
+      
+          <div class="leadsConvertIntoCostumerPercentage mt-3">
+            <p>% de clientes potenciales que se convierten en clientes</p>
+            <div class="field range">
+              
+              <input id="slidePorcentajeClientes" onmouseup="inversion()" type="range" min="0" max="100" value="0" steps="1">
+              <div id="porcentajeClientes" class="value righ2">0%</div>
+            </div>
+          </div>
+      
+          <div class="leadsConvertIntoCostumerPercentage mt-3">
+            <p>% de visitas al sitio web que se convierten en clientes potenciales</p>
+            <div class="field range">
+              
+              <input id="slidePorcentajeClientes2" type="range" min="0" max="100" value="0" steps="1">
+              <div id="porcetajeClientes2" class="value righ2">0%</div>
+            </div>
+          </div>
+      
+      
+         
+      
+      
+          <div class="costPerVisit">
+            <p>Costo por visita al sitio web</p>
+            <input onkeyup="inversion()" id="precioVisita" class="averagerevenue" type="number" ondrop="return false;" onpaste="return false;" placeholder="  $ 000  "><span class="ml-2" style="font-weight:600 ;">MXN</span>
+          </div>
+      
+          <!--FIN DE CONTENDEDOR IZQUIERDA-->
+      
+          
+      
+        </div>
+      
+        <div class="contenedor d-flex justify-content-around flex-column">
+      
+          <div class="container circulosPorcentaje d-flex justify-content-around">
+      
+            <div class="container  contenedor3">
+      
+              <div class="circular-progress" id="circular-progress">
+                <div class="value-container description">NUEVOS CLIENTES<br> POTENCIALES<br> AL MES</div>
+                <div class="value-container" id="valor-circulo">0</div>
+                
+              </div>
+              
+            </div>
+        
+            <div class="container contenedor4">
+              <div class="circular-progress" id="circular-progreso">
+                <div class="value-container description">NUEVOS VISITANTES<br> AL SITIO WEB <br>  AL MES</div>
+                <div class="value-container" id="vs">0</div>
+                
+              </div>
+      
+              
+            </div>
+      
+          </div>
+      
+          <div class="container contenedor-Resultados">
+            <div class="resultado d-flex justify-content-between">
+              <p>Ingresos totales de nuevos clientes por mes</p>
+              <span id="resultadoIngresosTotales">$ 0 MXN</span>
+            </div>
+            <div class="resultado d-flex justify-content-between necesaryInvestment">
+              <p>Inversión en marketing necesaria para lograr <br> la meta</p>
+              <span id="texto-inversion">$ 0 MXN</span>
+            </div>
+            <div class="container d-flex  split pr-0">
+              <div class="resultado d-flex justify-content-around mr-3 bloque">
+                <p class="mr-2">COSTE POR CLIENTE POTENCIAL</p>
+                <span id="costPerLead">$ 0 MXN</span>
+              </div>
+              <div class="resultado d-flex justify-content-between  bloque bloqueDos">
+                <p>RENDIMIENTO DE LA INVERSIÓN EN PUBLICIDAD</p>
+                <span id="ROASTEXT">0%</span>
+              </div>
+              
+            </div>
+            
+            
+          </div>
+          
+        </div>
+      
+      </div>
+      
+      
+      
+      
+      
+    <script src="/logica.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    
+</body>
+</html>
