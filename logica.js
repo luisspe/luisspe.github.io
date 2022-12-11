@@ -120,7 +120,7 @@
    slideValuePorcentaje2.classList.remove("show");
  });
 
- inputSliderPorcentaje2.onmousedown = (() =>{
+ inputSliderPorcentaje2.ontouchstart = (() =>{
 
    if (inputSliderPorcentaje2.value >0){
      progressValueDos = 0;
@@ -130,7 +130,7 @@
 
  });
 
- inputSliderPorcentaje2.onmouseup = (() => {
+ inputSliderPorcentaje2.ontouchend = (() => {
 
    if ( progressValueDos == 0 && inputSliderPorcentaje2.value >=1){
      if(progressEndValueDos > 0){
