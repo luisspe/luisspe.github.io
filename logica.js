@@ -60,7 +60,7 @@
  });
 
  
- inputSliderPorcentaje.onmousedown = (() =>{
+ inputSliderPorcentaje.ontouchstart = (() =>{
 
    if (inputSliderPorcentaje.value >0){
      progressValue1 = 0;
@@ -71,7 +71,7 @@
  });
 
  
- inputSliderPorcentaje.onmouseup = (() => {
+ inputSliderPorcentaje.ontouchend = (() => {
 
    if (clientesAlMes.value >= 1 && progressValue1 == 0 && inputSliderPorcentaje.value >=1){
 
